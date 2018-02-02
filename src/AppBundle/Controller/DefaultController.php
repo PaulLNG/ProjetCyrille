@@ -26,8 +26,11 @@ class DefaultController extends Controller
      */
     public function homepageAction(Request $request)
     {
+        $conseilService = $this->get('projet.service');
         
-        return $this->render('default/homepage.html.twig');
+        $lesObjets = $conseilService->getAllObjet();
+        
+        return $this->render('default/homepage.html.twig'  , array("lesObjet" => $lesObjet) );
     }
     
     /**
@@ -35,15 +38,9 @@ class DefaultController extends Controller
      */
     public function objetAction(Request $request , $idObjet)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $conseilService = $this->get('projet.service');
         
-        $objet = new Objet();
-        
-        $objet = $em->getRepository('AppBundle:Objet')->findOneById($idObjet);
-        
-//         var_dump($objet);
-//         die();
-       
+        $objet = $conseilService->getObjetDetail($idObjet);
         
         return $this->render('default/objet.html.twig' , array("objet" => $objet));
     }

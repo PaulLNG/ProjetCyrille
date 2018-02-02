@@ -1,0 +1,31 @@
+services:
+#    finaxy_club_tea_vantage.example:
+#        class: Finaxy\ClubTeaVantageBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+# Services pour la connexion , deconnexion et inscription
+     user.service:
+         class: Finaxy\ClubTeaVantageBundle\Service\UserService
+         arguments:
+            - "@doctrine.orm.entity_manager"
+     
+ # Services pour l'envoi des mail
+     
+     mail.service:
+         class: Finaxy\ClubTeaVantageBundle\Service\MailService
+         arguments: ["@mailer" , "@templating"]
+
+# Repository User
+
+#     repository.user:
+#        class: Doctrine\ORM\UserClubRepository
+#        factory_service: doctrine.orm.entity_manager
+#        factory_method: getRepository
+#        arguments:
+#            - Finaxy\ClubTeaVantageBundle\Entity\UserClub
+
+
+    projet.service:
+        class: AppBundle/Service/ConseilService
+        arguments: 
+            - "@doctrine.orm.entity_manager"

@@ -1,8 +1,27 @@
-<h1> Bonjour ! </h1>
+<h1> Bonjour et bienvenue </h1>
+
+<h2> Vos objets connectés : </h2>
 
 
-<a href="http://localhost/ProjetCyrille/web/app_dev.php/conseil/1"> 
+<ul>
+{% for objet in lesObjet %}
 
-<button> Conseils </button>
+
+<li> 
+
+<h2> {{ objet.nom }} ({{ objet.typeObjet.nom }})</h2>
+
+
+<a href="http://localhost/ProjetCyrille/web/app_dev.php/objet/{{ objet.id }}">
+
+<button> Voir plus  </button>    
 
 </a>
+
+</li>
+
+
+
+{% endfor %}
+
+</ul>
