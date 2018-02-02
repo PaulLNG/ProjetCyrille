@@ -1,0 +1,16 @@
+<h1> Votre {{ objet.nom }} </h1>
+
+<h2> Type : {{ objet.typeObjet.nom }} </h2>
+
+<h3> Consommation : {{ objet.consommation }} Kw/H </h3>
+
+{% for conseil in objet.lesConseils %}
+
+<h3> {{ conseil.titre }} </h3>
+
+<p> {{ conseil.contenu }} </p>
+
+<p> {{ conseil.degreConseil.libelle }} </p>
+
+
+{% endfor %}

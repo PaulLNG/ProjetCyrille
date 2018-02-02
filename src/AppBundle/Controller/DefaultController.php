@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManager;
+use AppBundle\Entity\Objet;
 
 class DefaultController extends Controller
 {
@@ -29,13 +31,21 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/conseil/{idConseil}", name="conseil")
+     * @Route("/objet/{idObjet}", name="objet")
      */
-    public function conseilAction(Request $request , $idConseil)
+    public function objetAction(Request $request , $idObjet)
     {
+        $em = $this->getDoctrine()->getEntityManager();
         
-        return $this->render('default/conseil.html.twig' , array("idConseil" => $idConseil , "titre" => "Economie Energie" , "contenu" => "Blablabla" ,
-        "type" => "informatique"));
+        $objet = new Objet();
+        
+        $objet = $em->getRepository('AppBundle:Objet')->findOneById($idObjet);
+        
+//         var_dump($objet);
+//         die();
+       
+        
+        return $this->render('default/objet.html.twig' , array("objet" => $objet));
     }
     
     

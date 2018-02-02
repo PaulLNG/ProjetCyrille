@@ -180,28 +180,4 @@ class Conseil
     {
         return $this->typeObjet;
     }
-
-    /**
-     * Set typeConseil
-     *
-     * @param \AppBundle\Entity\TypeObjet $typeConseil
-     *
-     * @return Conseil
-     */
-    public function setTypeConseil(\AppBundle\Entity\TypeObjet $typeConseil)
-    {
-        $this->typeConseil = $typeConseil;
-
-        return $this;
-    }
-
-    /**
-     * Get typeConseil
-     *
-     * @return \AppBundle\Entity\TypeObjet
-     */
-    public function getTypeConseil()
-    {
-        return $this->typeConseil;
-    }
 }

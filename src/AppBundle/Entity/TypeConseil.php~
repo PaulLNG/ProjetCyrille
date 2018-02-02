@@ -2,8 +2,17 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
-class TypeConseil 
+
+/**
+ * TypeConseil
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\TypeConseilRepository")
+ */
+
+class TypeConseil
 {
     /**
      * @ORM\Column(name="id", type="integer")
@@ -17,7 +26,4 @@ class TypeConseil
      * @ORM\Column(name="nom" , type="string")
      */
     private $nom;
-    
-    
-    
 }
