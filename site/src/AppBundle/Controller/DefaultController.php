@@ -46,6 +46,7 @@ class DefaultController extends Controller
             "objet" => $objet
         ));
     }
+<<<<<<< HEAD:site/src/AppBundle/Controller/DefaultController.php
 
     /**
      * @Route("/test/", name="test")
@@ -55,4 +56,19 @@ class DefaultController extends Controller
         die("test");
         return new Response("test");
     }
+=======
+    
+    /**
+     * @Route("/test/" , name="test")
+     */
+    public function testAction(Request $request)
+    {
+        return new Response("test");
+    }
+    
+    
+    
+    
+    
+>>>>>>> ab5746d4beb28ef670bd715f32cbdb5549004377:src/AppBundle/Controller/DefaultController.php
 }
