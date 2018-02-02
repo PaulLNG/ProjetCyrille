@@ -1,6 +1,5 @@
-<?php 
-
-namespace AppBundle\Entity; 
+<?php
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,10 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\DegreConseilRepository")
  */
-
 class DegreConseil
 {
-    
 
     /**
      * @ORM\Column(name="id", type="integer")
@@ -21,14 +18,11 @@ class DegreConseil
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
-     * 
      * @ORM\Column(name="libelle" , type="string")
      */
     private $libelle;
-    
-    
 
     /**
      * Get id
@@ -50,7 +44,7 @@ class DegreConseil
     public function setContenu($contenu)
     {
         $this->contenu = $contenu;
-
+        
         return $this;
     }
 
@@ -74,7 +68,7 @@ class DegreConseil
     public function setLibelle($libelle)
     {
         $this->libelle = $libelle;
-
+        
         return $this;
     }
 

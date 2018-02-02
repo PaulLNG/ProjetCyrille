@@ -1,27 +1,30 @@
-<h1> Bonjour et bienvenue </h1>
+<h1>Bonjour et bienvenue</h1>
 
-<h2> Vos objets connectés : </h2>
+<h2>Vos objets connectés :</h2>
 
 
 <ul>
-{% for objet in lesObjets %}
+	{% for objet in lesObjets %}
 
 
-<li> 
+	<li>
 
-<h2> {{ objet.nom }} ({{ objet.typeObjet.nom }})</h2>
+		<h2>
+			{{ objet.nom }}
+			(
+			{{ objet.typeObjet.nom }}
+			)
+		</h2> <a
+		href="http://localhost/ProjetCyrille/web/app_dev.php/objet/{{ objet.id }}">
+
+			<button>Voir plus</button>
+
+	</a>
+
+	</li>
 
 
-<a href="http://localhost/ProjetCyrille/web/app_dev.php/objet/{{ objet.id }}">
 
-<button> Voir plus  </button>    
-
-</a>
-
-</li>
-
-
-
-{% endfor %}
+	{% endfor %}
 
 </ul>

@@ -1,26 +1,43 @@
-<h1> Votre {{ objet.nom }} </h1>
+<h1>
+	Votre
+	{{ objet.nom }}
+</h1>
 
-<h2> Type : {{ objet.typeObjet.nom }} </h2>
+<h2>
+	Type :
+	{{ objet.typeObjet.nom }}
+</h2>
 
-<h3> Consommation : {{ objet.consommation }} Kw/H </h3>
+<h3>
+	Consommation :
+	{{ objet.consommation }}
+	Kw/H
+</h3>
 
 {% for conseil in objet.lesConseils %}
 
 
 
-<h3> {{ conseil.titre }} </h3>
+<h3>
+	{{ conseil.titre }}
+</h3>
 
-<p> {{ conseil.contenu }} </p>
+<p>
+	{{ conseil.contenu }}
+</p>
 
-<p> Degré de consommation : {{ conseil.degreConseil.libelle }} </p>
+<p>
+	Degré de consommation :
+	{{ conseil.degreConseil.libelle }}
+</p>
 
 
 {% endfor %}
 
 
 
-<a href="http://localhost/ProjetCyrille/web/app_dev.php/homepage/"> 
+<a href="http://localhost/ProjetCyrille/web/app_dev.php/homepage/">
 
-<button> Retour à l'accueil </button>
+	<button>Retour à l'accueil</button>
 
 </a>

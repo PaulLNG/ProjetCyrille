@@ -1,12 +1,7 @@
-<?php 
-
-
+<?php
 namespace AppBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
-
-
 
 /**
  * Conseil
@@ -14,42 +9,36 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\ConseilRepository")
  */
-class Conseil 
+class Conseil
 {
+
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\DegreConseil", cascade={"persist"})
      */
     private $degreConseil;
-    
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TypeObjet", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $typeConseil;
-    
-    
+
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
-    
+
     /**
      * @ORM\Column(name="titre" , type="string")
      */
     private $titre;
-    
+
     /**
      * @ORM\Column(name="contenu" , type="string")
      */
     private $contenu;
-    
-
-
-
 
     /**
      * Get id
@@ -71,7 +60,7 @@ class Conseil
     public function setIdType($idType)
     {
         $this->idType = $idType;
-
+        
         return $this;
     }
 
@@ -95,7 +84,7 @@ class Conseil
     public function setTitre($titre)
     {
         $this->titre = $titre;
-
+        
         return $this;
     }
 
@@ -119,7 +108,7 @@ class Conseil
     public function setContenu($contenu)
     {
         $this->contenu = $contenu;
-
+        
         return $this;
     }
 
@@ -143,7 +132,7 @@ class Conseil
     public function setDegreConseil(\AppBundle\Entity\DegreConseil $degreConseil = null)
     {
         $this->degreConseil = $degreConseil;
-
+        
         return $this;
     }
 
@@ -167,7 +156,7 @@ class Conseil
     public function setTypeObjet(\AppBundle\Entity\TypeObjet $typeObjet = null)
     {
         $this->typeObjet = $typeObjet;
-
+        
         return $this;
     }
 
@@ -191,7 +180,7 @@ class Conseil
     public function setTypeConseil(\AppBundle\Entity\TypeObjet $typeConseil)
     {
         $this->typeConseil = $typeConseil;
-
+        
         return $this;
     }
 

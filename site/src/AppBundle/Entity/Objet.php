@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -10,40 +9,35 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\ObjetRepository")
  */
-
 class Objet
 {
+
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\TypeObjet", cascade={"persist"})
      */
-    private $typeObjet;    
-    
+    private $typeObjet;
+
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Conseil", cascade={"persist"})
      */
     private $lesConseils;
-    
-    
-    
+
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
      * @ORM\Column(name="nom" , type="string")
      */
-    private $nom; 
-    
-    
+    private $nom;
+
     /**
-     * 
      * @ORM\Column(name="consommation" , type="integer")
      */
     private $consommation;
-    
 
     /**
      * Get id
@@ -65,7 +59,7 @@ class Objet
     public function setNom($nom)
     {
         $this->nom = $nom;
-
+        
         return $this;
     }
 
@@ -89,7 +83,7 @@ class Objet
     public function setTypeObjet($typeObjet)
     {
         $this->typeObjet = $typeObjet;
-
+        
         return $this;
     }
 
@@ -113,7 +107,7 @@ class Objet
     public function setConseil(\AppBundle\Entity\Conseil $conseil = null)
     {
         $this->conseil = $conseil;
-
+        
         return $this;
     }
 
@@ -126,6 +120,7 @@ class Objet
     {
         return $this->conseil;
     }
+
     /**
      * Constructor
      */
@@ -144,7 +139,7 @@ class Objet
     public function addLesConseil(\AppBundle\Entity\Conseil $lesConseil)
     {
         $this->lesConseils[] = $lesConseil;
-
+        
         return $this;
     }
 
@@ -178,7 +173,7 @@ class Objet
     public function setConsommation($consommation)
     {
         $this->consommation = $consommation;
-
+        
         return $this;
     }
 
