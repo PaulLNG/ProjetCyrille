@@ -1,31 +1,25 @@
-<?php 
-
+<?php
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
  * TypeObjet
- * 
+ *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\TypeConseilRepository")
- *
  */
 class TypeObjet
 {
-    
-    
-     /**
-     * 
+
+    /**
      * @ORM\Column(name="id" , type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
+
     /**
-     * 
      * @ORM\Column(name="nom" , type="string")
      */
     private $nom;
@@ -50,7 +44,7 @@ class TypeObjet
     public function setNom($nom)
     {
         $this->nom = $nom;
-
+        
         return $this;
     }
 
@@ -64,7 +58,6 @@ class TypeObjet
         return $this->nom;
     }
 
-    
     /**
      * Constructor
      */
@@ -83,7 +76,7 @@ class TypeObjet
     public function addLesConseil(\AppBundle\Entity\Conseil $lesConseil)
     {
         $this->lesConseils[] = $lesConseil;
-
+        
         return $this;
     }
 
@@ -117,7 +110,7 @@ class TypeObjet
     public function setLesConseils(\AppBundle\Entity\Conseil $lesConseils)
     {
         $this->lesConseils = $lesConseils;
-
+        
         return $this;
     }
 }
