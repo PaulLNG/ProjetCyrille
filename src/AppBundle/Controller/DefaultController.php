@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -45,4 +46,17 @@ class DefaultController extends Controller
             "objet" => $objet
         ));
     }
+    
+    /**
+     * @Route("/test/" , name="test")
+     */
+    public function testAction(Request $request)
+    {
+        return new Response("test");
+    }
+    
+    
+    
+    
+    
 }
