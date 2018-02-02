@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -44,5 +45,14 @@ class DefaultController extends Controller
         return $this->render('default/objet.html.twig', array(
             "objet" => $objet
         ));
+    }
+
+    /**
+     * @Route("/test/", name="test")
+     */
+    public function testAction(Request $request)
+    {
+        die("test");
+        return new Response("test");
     }
 }
