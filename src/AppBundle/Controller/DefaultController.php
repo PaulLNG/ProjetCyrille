@@ -22,7 +22,7 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/homepage", name="homepage")
+     * @Route("/homepage/", name="homepage")
      */
     public function homepageAction(Request $request)
     {
@@ -30,7 +30,7 @@ class DefaultController extends Controller
         
         $lesObjets = $conseilService->getAllObjet();
         
-        return $this->render('default/homepage.html.twig'  , array("lesObjet" => $lesObjet) );
+        return $this->render('default/homepage.html.twig'  , array("lesObjets" => $lesObjets) );
     }
     
     /**
